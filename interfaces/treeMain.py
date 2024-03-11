@@ -79,7 +79,7 @@ def getFindValue(val):
     global FIND
     FIND = val.get()
 
-def create_main_frame(app):
+def create_main_frame1(app):
     main_frame = customtkinter.CTkFrame(master=app)
     btree = BPlusTree(MAX_DEGREE)
     canvas_frame = customtkinter.CTkFrame(master=main_frame)
@@ -104,8 +104,8 @@ def create_main_frame(app):
     row1.grid(row=0, column=0, sticky="nsew", pady=10)
     row2.grid(row=1, column=0, sticky="nsew", pady=10)
 
-    IASD = customtkinter.CTkImage(Image.open("../Images/IASD.png"), size=(100, 100))
-    FSTT = customtkinter.CTkImage(Image.open("../Images/FSTT.png"), size=(100, 100))
+    IASD = customtkinter.CTkImage(Image.open("Images/IASD.png"), size=(100, 100))
+    FSTT = customtkinter.CTkImage(Image.open("Images/FSTT.png"), size=(100, 100))
 
     customtkinter.CTkLabel(master=row1, image=IASD, text="").pack(side="left", padx=10, pady=20)
     customtkinter.CTkLabel(master=row1, image=FSTT, text="").pack(side="right", padx=10, pady=20)
@@ -178,6 +178,6 @@ if __name__ == "__main__":
     root.rowconfigure(0, weight=1)
 
     # Your GUI widgets and logic would go here
-    create_main_frame(root)
+    create_main_frame1(root)
 
     root.mainloop()

@@ -8,8 +8,7 @@ import pandas as pd
 from options import display_options
 from hachage_frame import create_hachage_frame
 from tkinter import messagebox
-
-
+from treeMain import create_main_frame1
 
 def create_main_frame(app):
     main_frame = customtkinter.CTkFrame(master=app, fg_color="#ffffff")
@@ -47,7 +46,7 @@ def create_main_frame(app):
                             command=lambda: switch_to_options(app, main_frame)).pack(pady=(50, 10), side='top',
                                                                                     anchor='center', padx=30)
 
-    customtkinter.CTkButton(master=row2, text="Arbre b++",
+    customtkinter.CTkButton(master=row2, text="Arbre b++",command=lambda :switch_to_bpp(app,main_frame)
                             ).pack(pady=10, side='top', anchor='center',
                                                                                   padx=30)
 
@@ -67,7 +66,10 @@ def switch_to_options(main_app,main_frame):
 
     display_options(main_app).grid(sticky=customtkinter.EW + customtkinter.NS)
 
+def switch_to_bpp(main_app,main_frame):
+    main_frame.grid_forget()
 
+    create_main_frame1(main_app).grid(sticky=customtkinter.EW + customtkinter.NS)
 
 
 
